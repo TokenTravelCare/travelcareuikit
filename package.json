@@ -1,6 +1,6 @@
 {
-  "name": "@pancakeswap/uikit",
-  "version": "0.61.0",
+  "name": "@faisal90/travelcareuikit",
+  "version": "0.0.1",
   "description": "Set of UI components for pancake projects",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
@@ -8,7 +8,7 @@
   "files": [
     "dist"
   ],
-  "repository": "https://github.com/pancakeswap/pancake-toolkit/tree/master/packages/pancake-uikit",
+  "repository": "https://github.com/TokenTravelCare/travelcareuikit",
   "license": "MIT",
   "scripts": {
     "start": "yarn storybook",
