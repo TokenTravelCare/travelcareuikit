@@ -25,10 +25,7 @@ const StyledNav = styled.nav`
   align-items: center;
   width: 100%;
   height: ${MENU_HEIGHT}px;
-  background-color: ${({ theme }) => theme.nav.background};
-  border-bottom: 1px solid ${({ theme }) => theme.colors.cardBorder};
   transform: translate3d(0, 0, 0);
-
   padding-left: 16px;
   padding-right: 16px;
 `;
@@ -125,61 +122,18 @@ const Menu: React.FC<NavProps> = ({
 
   return (
     <Wrapper>
-      <FixedContainer showMenu={showMenu} height={totalTopMenuHeight}>
-        {banner && <TopBannerContainer height={topBannerHeight}>{banner}</TopBannerContainer>}
+      <FixedContainer style={{backgroundColor:"white"}} showMenu={showMenu} height={totalTopMenuHeight}>
+       
         <StyledNav>
-          <Flex>
-            <Logo isDark={isDark} href={homeLink?.href ?? "/"} />
-            {!isMobile && <MenuItems items={links} activeItem={activeItem} activeSubItem={activeSubItem} ml="24px" />}
-          </Flex>
-          <Flex alignItems="center" height="100%">
-            {!isMobile && (
-              <Box mr="12px">
-                <CakePrice cakePriceUsd={cakePriceUsd} />
-              </Box>
-            )}
-            <Box mt="4px">
-              <LangSelector
-                currentLang={currentLang}
-                langs={langs}
-                setLang={setLang}
-                buttonScale="xs"
-                color="textSubtle"
-                hideLanguage
-              />
-            </Box>
+          <Flex alignItems="center" height="100%" width="100%" justifyContent="flex-end">
             {globalMenu} {userMenu}
           </Flex>
         </StyledNav>
       </FixedContainer>
-      {subLinks && (
-        <Flex justifyContent="space-around">
-          <SubMenuItems items={subLinksWithoutMobile} mt={`${totalTopMenuHeight + 1}px`} activeItem={activeSubItem} />
-
-          {subLinksMobileOnly?.length > 0 && (
-            <SubMenuItems
-              items={subLinksMobileOnly}
-              mt={`${totalTopMenuHeight + 1}px`}
-              activeItem={activeSubItem}
-              isMobileOnly
-            />
-          )}
-        </Flex>
-      )}
+      
       <BodyWrapper mt={!subLinks ? `${totalTopMenuHeight + 1}px` : "0"}>
         <Inner isPushed={false} showMenu={showMenu}>
           {children}
-          <Footer
-            items={footerLinks}
-            isDark={isDark}
-            toggleTheme={toggleTheme}
-            langs={langs}
-            setLang={setLang}
-            currentLang={currentLang}
-            cakePriceUsd={cakePriceUsd}
-            buyCakeLabel={buyCakeLabel}
-            mb={[`${MOBILE_MENU_HEIGHT}px`, null, "0px"]}
-          />
         </Inner>
       </BodyWrapper>
       {isMobile && <BottomNav items={links} activeItem={activeItem} activeSubItem={activeSubItem} />}
