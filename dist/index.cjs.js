@@ -3169,7 +3169,7 @@ var Slider = function (_a) {
 };
 
 var Icon$1 = function (props) {
-    return (React__default['default'].createElement(Svg, __assign({ viewBox: "0 0 256 256" }, props),
+    return (React__default['default'].createElement(Svg, __assign({ viewBox: "0 0 126 156" }, props),
         React__default['default'].createElement("svg", __assign({ id: "Capa_1", "data-name": "Capa 1", xmlns: "http://www.w3.org/2000/svg", xmlnsXlink: "http://www.w3.org/1999/xlink", viewBox: "0 0 101.64 120.69" }, props),
             React__default['default'].createElement("defs", null,
                 React__default['default'].createElement("style", null, ".cls-1{fill:none;}.cls-2{fill:url(#linear-gradient);}.cls-3{fill:#5ebfed;}.cls-4{clip-path:url(#clip-path);}.cls-5{fill:url(#linear-gradient-2);}.cls-6{fill:url(#linear-gradient-3);}.cls-7{fill:url(#linear-gradient-4);}.cls-8{fill:url(#linear-gradient-5);}.cls-9{fill:url(#linear-gradient-6);}"),
